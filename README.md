@@ -48,4 +48,8 @@ It aims to control the throttle of a vehicle based on the distance to an obstacl
 
 <p align="justify"> The Fuzzy Logic Controller (FLC) utilizes 15 rules to map the inputs—vehicle speed and distance to obstacles—to the throttle output, ensuring precise and safe control. The system's effectiveness is demonstrated through simulations conducted under five different initial conditions, highlighting its ability to manage throttle adjustments for collision avoidance. Results from these simulations include detailed plots showing variations in speed, distance to the obstacle, and throttle over time, providing a clear visualization of the controller's performance under diverse scenarios. </p>
 
+[Project Report](https://github.com/Upeksha-Dilhara/Fuzzy-logic-throttle-controller-for-vehicle-collision-avoidance/blob/main/FLC%20assignment_200128D.pdf)
+
+
+
 
