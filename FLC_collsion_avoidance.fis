@@ -1,0 +1,57 @@
+[System]
+Name='FLC_collsion_avoidance'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=15
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Distance_to_obstacle'
+Range=[0 80]
+NumMFs=5
+MF1='Very_Close':'trapmf',[0 0 10 20]
+MF2='Close':'trapmf',[10 20 30 40]
+MF3='Medium':'trapmf',[30 40 50 60]
+MF4='Far':'trapmf',[50 60 70 80]
+MF5='Very_Far':'trapmf',[70 80 80 80]
+
+[Input2]
+Name='Speed'
+Range=[5 180]
+NumMFs=3
+MF1='Slow':'trapmf',[0 0 60 90]
+MF2='Medium':'trapmf',[40 90 120 150]
+MF3='Fast':'trapmf',[120 150 180 180]
+
+[Output1]
+Name='Throttle'
+Range=[0 100]
+NumMFs=5
+MF1='No_Trottle':'trapmf',[0 0 10 30]
+MF2='Low_Trottle':'trapmf',[10 20 30 50]
+MF3='Medium_Trottle':'trapmf',[30 50 60 80]
+MF4='High_Trottle':'trapmf',[60 70 80 90]
+MF5='Full_Trottle':'trapmf',[80 90 100 100]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+2 1, 2 (1) : 1
+2 2, 2 (1) : 1
+2 3, 1 (1) : 1
+3 1, 3 (1) : 1
+3 2, 2 (1) : 1
+3 3, 1 (1) : 1
+4 1, 4 (1) : 1
+4 2, 3 (1) : 1
+4 3, 2 (1) : 1
+5 1, 5 (1) : 1
+5 2, 4 (1) : 1
+5 3, 3 (1) : 1
